@@ -783,11 +783,12 @@
   }
 
   [feature = 'historic_memorial'][memorial = null][zoom >= 17],
-  [feature = 'historic_memorial'][memorial != null][memorial != 'blue_plaque'][memorial != 'bust'][memorial != 'plaque'][memorial != 'stele'][memorial != 'stone'][zoom >= 17],
+  [feature = 'historic_memorial'][memorial != null][memorial != 'blue_plaque'][memorial != 'bust'][memorial != 'plaque'][memorial != 'stele'][memorial != 'stone'][memorial != 'stolperstein'][zoom >= 17],
   [feature = 'historic_memorial'][memorial = 'statue'][zoom >= 17],
   [feature = 'historic_memorial'][memorial = 'bust'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stele'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stone'][zoom >= 18],
+  [feature = 'historic_memorial'][memorial = 'stolperstein'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'blue_plaque'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'plaque'][zoom >= 19] {
     marker-file: url('symbols/historic/memorial.svg');
@@ -803,6 +804,9 @@
     }
     [memorial = 'stone'] {
       marker-file: url('symbols/historic/stone.svg');
+    }
+    [memorial = 'stolperstein'] {
+      marker-file: url('symbols/historic/plaque.svg');
     }
     marker-fill: @memorials;
     marker-clip: false;
@@ -1964,11 +1968,12 @@
 
   [feature = 'tourism_artwork'][zoom >= 17],
   [feature = 'historic_memorial'][memorial = null][zoom >= 17],
-  [feature = 'historic_memorial'][memorial != null][memorial != 'blue_plaque'][memorial != 'bust'][memorial != 'plaque'][memorial != 'stele'][memorial != 'stone'][zoom >= 17],
+  [feature = 'historic_memorial'][memorial != null][memorial != 'blue_plaque'][memorial != 'bust'][memorial != 'plaque'][memorial != 'stele'][memorial != 'stone'][memorial != 'stolperstein'][zoom >= 17],
   [feature = 'historic_memorial'][memorial = 'statue'][zoom >= 17],
   [feature = 'historic_memorial'][memorial = 'bust'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stele'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stone'][zoom >= 18],
+  [feature = 'historic_memorial'][memorial = 'stolperstein'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'blue_plaque'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'plaque'][zoom >= 19],
   [feature = 'man_made_obelisk'][zoom >= 17],
