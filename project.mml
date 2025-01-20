@@ -650,6 +650,8 @@ Layer:
                 ('unclassified', 5),
                 ('residential', 6),
                 ('living_street', 7),
+                ('busway', 7),
+                ('bus_guideway', 8),
                 ('service', 8),
                 ('track', 9)
               ) AS v (highway, prio)
