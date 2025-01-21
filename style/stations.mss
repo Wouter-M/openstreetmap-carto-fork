@@ -24,14 +24,14 @@
     marker-file: url('symbols/square.svg');
     marker-fill: @station-color;
     marker-clip: false;
-    [station != 'subway'] {
+    [station != 'subway'][usage != 'tourism'] {
       marker-width: 4;
     }
     [usage = 'tourism'] {
       marker-fill: @minor-station-color;
     }
-    [zoom >= 13][station != 'subway'],
-    [zoom >= 14][station = 'subway'] {
+    [zoom >= 13][station != 'subway'][usage != 'tourism'],
+    [zoom >= 14][station = 'subway'][usage != 'tourism'] {
       marker-width: 6;
     }
     [zoom >= 14][station != 'subway'][usage != 'tourism'],
@@ -46,15 +46,19 @@
       text-wrap-width: 30; // 3 em
       text-line-spacing: -1.5; // -0.15 em
     }
+    [zoom >= 16] {
+      marker-width: 5;
+    }
     [zoom >= 15][station != 'subway'][usage != 'tourism'],
     [zoom >= 16][usage != 'tourism'] {
-      marker-width: 9;
+      marker-width: 7;
       text-size: 11;
       text-wrap-width: 33; // 3 em
       text-line-spacing: -1.65; // -0.15 em
       text-dy: 10;
     }
     [zoom >= 17][usage = 'tourism'] {
+      marker-width: 7;
       text-name: "[name]";
       text-face-name: @bold-fonts;
       text-size: 10;
