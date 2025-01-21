@@ -251,13 +251,6 @@
     polygon-fill: @built-up-lowzoom;
     [zoom >= 12] { polygon-fill: @built-up-z12; }
     [zoom >= 13] { polygon-fill: @residential; }
-    [zoom >= 16] {
-      line-width: .5;
-      line-color: @residential-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-    }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
@@ -339,7 +332,7 @@
 
   [feature = 'landuse_farmyard'][zoom >= 10] {
     polygon-fill: @farmyard;
-      [zoom >= 16] {
+      [zoom >= 17] {
         line-width: 0.5;
         line-color: @farmyard-line;
         [name != ''] {
@@ -354,7 +347,7 @@
   [feature = 'landuse_greenhouse_horticulture'] {
     [zoom >= 5] {
       polygon-fill: @farmland;
-      [zoom >= 16] {
+      [zoom >= 17] {
         line-width: .5;
         line-color: @farmland-line;
       }
@@ -395,13 +388,6 @@
     polygon-fill: @built-up-lowzoom;
     [zoom >= 12] { polygon-fill: @built-up-z12; }
     [zoom >= 13] { polygon-fill: @industrial; }
-    [zoom >= 16] {
-      line-width: .5;
-      line-color: @industrial-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-    }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
@@ -474,13 +460,6 @@
     polygon-fill: @built-up-lowzoom;
     [zoom >= 12] { polygon-fill: @built-up-z12; }
     [zoom >= 13] { polygon-fill: @commercial; }
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: @commercial-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-    }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
@@ -640,7 +619,7 @@
   [feature = 'amenity_taxi'] {
     [zoom >= 14] {
       polygon-fill: @parking;
-      [zoom >= 15] {
+      [zoom >= 17] {
         line-width: 0.3;
         line-color: @parking-outline;
       }
