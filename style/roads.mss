@@ -3537,6 +3537,9 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         }
       }
     }
+    #tunnels[feature = 'highway_busway'] {
+      access/line-dasharray: 1,6;
+    }
     [feature = 'highway_road'],
     [feature = 'highway_service'][service = 'INT-normal'] {
       [zoom >= 16] {
