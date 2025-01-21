@@ -435,6 +435,7 @@ Layer:
           WHERE building IS NOT NULL
             AND building != 'no'
             AND way_area > 1*!pixel_width!::real*!pixel_height!::real
+            AND ((tags->'location') IS NULL OR tags->'location' NOT IN ('underground'))
           ORDER BY COALESCE(layer,0), way_area DESC
         ) AS buildings
     properties:
