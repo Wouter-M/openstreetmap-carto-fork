@@ -1,5 +1,7 @@
 @station-color: #7981b0;
 @station-text: darken(saturate(@station-color, 15%), 10%);
+@minor-station-color: #b08378;
+@minor-station-text: darken(saturate(@minor-station-color, 15%), 10%);
 
 #stations {
   [railway = 'subway_entrance'][zoom >= 18] {
@@ -25,12 +27,15 @@
     [station != 'subway'] {
       marker-width: 4;
     }
+    [usage = 'tourism'] {
+      marker-fill: @minor-station-color;
+    }
     [zoom >= 13][station != 'subway'],
     [zoom >= 14][station = 'subway'] {
       marker-width: 6;
     }
-    [zoom >= 14][station !='subway'],
-    [zoom >=15] {
+    [zoom >= 14][station != 'subway'][usage != 'tourism'],
+    [zoom >=15][usage != 'tourism'] {
       text-name: "[name]";
       text-face-name: @bold-fonts;
       text-size: 10;
@@ -41,13 +46,24 @@
       text-wrap-width: 30; // 3 em
       text-line-spacing: -1.5; // -0.15 em
     }
-    [zoom >= 15][station != 'subway'],
-    [zoom >= 16] {
+    [zoom >= 15][station != 'subway'][usage != 'tourism'],
+    [zoom >= 16][usage != 'tourism'] {
       marker-width: 9;
       text-size: 11;
       text-wrap-width: 33; // 3 em
       text-line-spacing: -1.65; // -0.15 em
       text-dy: 10;
+    }
+    [zoom >= 17][usage = 'tourism'] {
+      text-name: "[name]";
+      text-face-name: @bold-fonts;
+      text-size: 10;
+      text-fill: @minor-station-text;
+      text-dy: 9;
+      text-halo-radius: @standard-halo-radius * 1.5;
+      text-halo-fill: @standard-halo-fill;
+      text-wrap-width: 30; // 3 em
+      text-line-spacing: -1.5; // -0.15 em
     }
   }
 

@@ -1436,7 +1436,8 @@ Layer:
             ref,
             railway,
             aerialway,
-            station
+            station,
+            usage
           FROM
           (SELECT
               ST_PointOnSurface(way) AS way,
@@ -1445,7 +1446,8 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
-              way_area
+              way_area,
+              tags->'usage' as usage
             FROM planet_osm_polygon
             WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
               AND way_area < 768000*POW(!scale_denominator!*0.001*0.28,2)
@@ -1457,7 +1459,8 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
-              NULL as way_area
+              NULL as way_area,
+              tags->'usage' as usage
             FROM planet_osm_point
             WHERE way && !bbox!
             ) _
