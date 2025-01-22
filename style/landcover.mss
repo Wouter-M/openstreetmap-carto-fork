@@ -170,6 +170,11 @@
     }
   }
 
+  [feature = 'man_made_planter'][zoom >= 18] {
+    line-color: lighten(#444,40%);
+    line-width: 2.5;
+  }
+  [feature = 'man_made_planter'],
   [feature = 'landuse_flowerbed'] {
     [zoom >= 10] {
       polygon-fill: @grass;
