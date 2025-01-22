@@ -619,7 +619,7 @@
   [feature = 'amenity_taxi'] {
     [zoom >= 14] {
       polygon-fill: @parking;
-      [zoom >= 17] {
+      [zoom >= 18] {
         line-width: 0.3;
         line-color: @parking-outline;
       }
