@@ -94,7 +94,7 @@
   [feature = 'leisure_playground'][zoom >= 13],
   [feature = 'leisure_fitness_station'][zoom >= 13] {
     polygon-fill: @leisure;
-    [zoom >= 15] {
+    [zoom >= 18] {
       line-color: darken(@leisure, 60%);
       line-width: 0.3;
     }
@@ -685,7 +685,7 @@
 
   [feature = 'leisure_track'][zoom >= 10] {
     polygon-fill: @track;
-    [zoom >= 15] {
+    [zoom >= 18] {
       line-width: 0.5;
       line-color: desaturate(darken(@track, 20%), 10%);
     }
@@ -695,7 +695,7 @@
 
   [feature = 'leisure_pitch'][zoom >= 10] {
     polygon-fill: @pitch;
-    [zoom >= 15] {
+    [zoom >= 18] {
       line-width: 0.5;
       line-color: desaturate(darken(@pitch, 20%), 10%);
     }
