@@ -377,15 +377,6 @@
       polygon-fill: @built-up-lowzoom;
       [zoom >= 12] { polygon-fill: @built-up-z12; }
       [zoom >= 13] { polygon-fill: @retail; }
-      [zoom >= 16] {
-        line-width: 0.5;
-        line-color: @retail-line;
-        [name != ''] {
-          line-width: 0.7;
-        }
-        [way_pixels >= 4]  { polygon-gamma: 0.75; }
-        [way_pixels >= 64] { polygon-gamma: 0.3;  }
-      }
     }
   }
 
