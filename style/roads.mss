@@ -119,7 +119,7 @@
 @living-street-width-z13:         2;
 @bridleway-width-z13:             0.3;
 @footway-width-z14:               0.7;
-@cycleway-width-z13:              0.7;
+@cycleway-width-z13:              0.5;
 @track-width-z13:                 0.5;
 @track-grade1-width-z13:          0.5;
 @track-grade2-width-z13:          0.5;
@@ -285,6 +285,8 @@
 @major-bridge-casing-width-z20:   1;
 
 @paths-background-width:          1;
+@paths-background-width-z18:      1.7;
+@paths-background-width-z19:      2;
 @paths-bridge-casing-width:       0.5;
 @paths-tunnel-casing-width:       1;
 
@@ -690,9 +692,9 @@
           line-width: @footway-width-z14 + 2 * (@paths-background-width + @paths-bridge-casing-width);
           [zoom >= 15] { line-width: @footway-width-z15 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
           [zoom >= 16] { line-width: @footway-width-z16 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          [zoom >= 18] { line-width: @footway-width-z18 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          [zoom >= 19] { line-width: @footway-width-z19 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          line-color: @bridge-casing;
+          [zoom >= 18] { line-width: @footway-width-z18 + 2 * (@paths-background-width-z18 + @paths-bridge-casing-width); }
+          [zoom >= 19] { line-width: @footway-width-z19 + 2 * (@paths-background-width-z19 + @paths-bridge-casing-width); }
+          line-color: lighten(@bridge-casing,40%);
           line-join: round;
         }
       }
@@ -714,12 +716,11 @@
       #bridges {
         [zoom >= 14][int_access != 'no'],
         [zoom >= 15] {
-          line-width: @cycleway-width-z13 + 2 * (@paths-background-width + @paths-bridge-casing-width);
           [zoom >= 15] { line-width: @cycleway-width-z15 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
           [zoom >= 16] { line-width: @cycleway-width-z16 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          [zoom >= 18] { line-width: @cycleway-width-z18 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          [zoom >= 19] { line-width: @cycleway-width-z19 + 2 * (@paths-background-width + @paths-bridge-casing-width); }
-          line-color: @bridge-casing;
+          [zoom >= 18] { line-width: @cycleway-width-z18 + 2 * (@paths-background-width-z18 + @paths-bridge-casing-width); }
+          [zoom >= 19] { line-width: @cycleway-width-z19 + 2 * (@paths-background-width-z19 + @paths-bridge-casing-width); }
+          line-color: lighten(@bridge-casing,40%);
           line-join: round;
         }
       }
@@ -891,8 +892,8 @@
           line-width: @footway-width-z14 + 2 * @paths-background-width;
           [zoom >= 15] { line-width: @footway-width-z15 + 2 * @paths-background-width; }
           [zoom >= 16] { line-width: @footway-width-z16 + 2 * @paths-background-width; }
-          [zoom >= 18] { line-width: @footway-width-z18 + 2 * @paths-background-width; }
-          [zoom >= 19] { line-width: @footway-width-z19 + 2 * @paths-background-width; }
+          [zoom >= 18] { line-width: @footway-width-z18 + 2 * @paths-background-width-z18; }
+          [zoom >= 19] { line-width: @footway-width-z19 + 2 * @paths-background-width-z19; }
           line-color: @footway-casing;
           line-join: round;
         }
@@ -919,8 +920,8 @@
           line-width: @cycleway-width-z13 + 2 * @paths-background-width;
           [zoom >= 15] { line-width: @cycleway-width-z15 + 2 * @paths-background-width; }
           [zoom >= 16] { line-width: @cycleway-width-z16 + 2 * @paths-background-width; }
-          [zoom >= 18] { line-width: @cycleway-width-z18 + 2 * @paths-background-width; }
-          [zoom >= 19] { line-width: @cycleway-width-z19 + 2 * @paths-background-width; }
+          [zoom >= 18] { line-width: @cycleway-width-z18 + 2 * @paths-background-width-z18; }
+          [zoom >= 19] { line-width: @cycleway-width-z19 + 2 * @paths-background-width-z19; }
           line-color: @cycleway-casing;
           line-join: round;
         }
