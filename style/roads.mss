@@ -35,7 +35,7 @@
 @road-casing: @residential-casing;
 @service-casing: @residential-casing;
 @living-street-casing: @residential-casing;
-@pedestrian-casing: #999;
+@pedestrian-casing: #BEBEBE;
 @path-casing: @default-casing;
 @footway-casing: @default-casing;
 @steps-casing: @default-casing;
@@ -3216,7 +3216,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   [feature = 'highway_footway'],
   [feature = 'highway_pedestrian'] {
     [zoom >= 18] {
-      line-color: grey;
+      line-color: @pedestrian-casing;
       line-width: 1;
     }
   }
