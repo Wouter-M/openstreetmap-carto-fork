@@ -42,6 +42,7 @@
 // --- Other ----
 
 @bare_ground: #eee5dc;
+@barrier: #444;
 @campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
 @construction: #c7c7b4; // also brownfield
@@ -867,7 +868,10 @@
 #barriers {
   [zoom >= 16] {
     line-width: 0.4;
-    line-color: #444;
+    line-color: lighten(@barrier,30%);
+    [zoom >= 18] {
+      line-color: @barrier;
+    }
   }
   [feature = 'barrier_hedge'][zoom >= 16] {
     line-width: 1.5;
