@@ -66,7 +66,7 @@
 
 // --- Sports ---
 
-@pitch: #88e0be;           // Lch(83,35,166) also track
+@pitch: #aee2b6;
 @track: @pitch;
 @stadium: @leisure; // also sports_centre
 @golf_course: @campsite;
