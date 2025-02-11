@@ -6,7 +6,8 @@
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145)
 @allotments: #c9e1bf;   // Lch(87,20,135)
-@orchard: #aedfa3; // also vineyard, plant_nursery
+@orchard: @forest; // also vineyard, plant_nursery
+@plant_nursery: @scrub;
 @hedge: @forest;       // Lch(80,30,135)
 @shrubbery: #b4d7a2;
 @shrubbery-line: #b0be93;
@@ -198,7 +199,7 @@
 
   [feature = 'landuse_plant_nursery'] {
     [zoom >= 10] {
-      polygon-fill: @orchard;
+      polygon-fill: @plant_nursery;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
