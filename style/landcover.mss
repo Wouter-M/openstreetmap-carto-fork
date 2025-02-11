@@ -733,6 +733,7 @@
 
   [int_wetland != null][zoom >= 10] {
     polygon-pattern-file: url('symbols/wetland.png');
+    polygon-pattern-opacity: 0.5;
     polygon-pattern-alignment: global;
   }
   [natural = 'reef'][zoom >= 10] {
