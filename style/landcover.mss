@@ -756,7 +756,7 @@
       polygon-pattern-alignment: global;
     }
     [int_wetland = 'swamp'] {
-      polygon-pattern-file: url('symbols/wetland_swamp.png');
+      polygon-pattern-file: url('symbols/wetland_marsh.png');
       polygon-pattern-alignment: global;
     }
     [int_wetland = 'bog'],
