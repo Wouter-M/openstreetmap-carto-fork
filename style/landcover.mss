@@ -6,7 +6,7 @@
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145)
 @allotments: #c9e1bf;   // Lch(87,20,135)
-@orchard: @forest; // also vineyard, plant_nursery
+@orchard: @forest; // also vineyard
 @plant_nursery: @scrub;
 @hedge: @forest;       // Lch(80,30,135)
 @shrubbery: #b4d7a2;
