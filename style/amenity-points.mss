@@ -708,6 +708,18 @@
     marker-clip: false;
   }
 
+  [feature = 'emergency_defibrillator'][zoom >= 19] {
+    marker-file: url('symbols/amenity/emergency_defibrillator.svg');
+    marker-fill: @health-color;
+    marker-clip: false;
+    marker-width: 12.0;
+    marker-height: 12.0;
+    [zoom >= 20] {
+      marker-width: 14.0;
+      marker-height: 14.0
+    }
+  }
+
   [feature = 'amenity_theatre'][zoom >= 16] {
     marker-file: url('symbols/amenity/theatre.svg');
     marker-fill: @culture;
