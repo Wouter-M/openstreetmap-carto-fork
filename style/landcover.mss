@@ -763,7 +763,7 @@
       polygon-pattern-alignment: global;
     }
     [int_wetland = 'swamp'] {
-      polygon-pattern-file: url('symbols/wetland_marsh.png');
+      polygon-pattern-file: url('symbols/wetland_swamp.png');
       polygon-pattern-alignment: global;
     }
     [int_wetland = 'bog'],
@@ -811,6 +811,15 @@
   //Also landuse = forest, converted in the SQL
   [natural = 'wood'][zoom >= 13]::wood {
     opacity: 0.4; // The entire layer has opacity to handle overlapping forests
+
+    [zoom >= 18] {
+      polygon-pattern-file: url('symbols/leaftype_unknown.svg'); // Lch(55,30,135)
+      [leaf_type = 'broadleaved'] { polygon-pattern-file: url('symbols/leaftype_broadleaved.svg'); }
+      [leaf_type = 'needleleaved'] { polygon-pattern-file: url('symbols/leaftype_needleleaved.svg'); }
+      [leaf_type = 'mixed'] { polygon-pattern-file: url('symbols/leaftype_mixed.svg'); }
+      [leaf_type = 'leafless'] { polygon-pattern-file: url('symbols/leaftype_leafless.svg'); }
+      polygon-pattern-alignment: global;
+    }
   }
 }
 
