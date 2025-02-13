@@ -216,12 +216,12 @@
   [feature = 'amenity_grave_yard'] {
     [zoom >= 10] {
       polygon-fill: @cemetery;
+    }
+    [zoom >= 18] {
       polygon-pattern-file: url('patterns/grave_yard_generic.svg');
       polygon-pattern-opacity: 0.6;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
-    }
-    [zoom >= 13] {
       [religion = 'jewish'] { polygon-pattern-file: url('patterns/grave_yard_jewish.svg'); }
       [religion = 'christian'] { polygon-pattern-file: url('patterns/grave_yard_christian.svg'); }
       [religion = 'muslim'] { polygon-pattern-file: url('patterns/grave_yard_muslim.svg'); }
