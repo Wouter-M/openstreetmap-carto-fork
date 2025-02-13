@@ -52,6 +52,7 @@
 @place_of_worship: #d0d0d0; // also landuse_religious
 @place_of_worship_outline: darken(@place_of_worship, 30%);
 @leisure: lighten(@park, 5%);
+@leisure-text: @leisure-green;
 @power: darken(@industrial, 5%);
 @power-line: darken(@industrial-line, 5%);
 @sand: #f5e9c6;
@@ -700,6 +701,10 @@
     }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
+  }
+
+  [feature = 'leisure_outdoor_seating'][zoom >= 16] {
+    polygon-fill: @leisure;
   }
 }
 }
