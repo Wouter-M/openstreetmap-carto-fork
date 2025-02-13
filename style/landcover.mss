@@ -315,12 +315,6 @@
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
-    [zoom >= 13] {
-      polygon-pattern-file: url('patterns/allotments.svg');
-      polygon-pattern-alignment: global;
-      [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
-      [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
-    }
     [zoom >= 16] {
       line-width: 0.5;
       line-color: desaturate(darken(@allotments, 10%), 10%);
