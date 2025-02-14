@@ -1535,7 +1535,8 @@
     }
   }
 
-  [feature = 'barrier_gate']::barrier {
+  [feature = 'barrier_gate']::barrier,
+  [feature = 'barrier_sliding_gate']::barrier {
     [zoom >= 17] {
       marker-file: url('symbols/barrier/gate.svg');
       marker-clip: false;
