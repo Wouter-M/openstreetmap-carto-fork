@@ -315,12 +315,9 @@
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
-    [zoom >= 16] {
-      line-width: 0.5;
+    [zoom >= 16][name != ''] {
       line-color: desaturate(darken(@allotments, 10%), 10%);
-      [name != null] {
-        line-width: 0.7;
-      }
+      line-width: 0.7;
     }
   }
 
