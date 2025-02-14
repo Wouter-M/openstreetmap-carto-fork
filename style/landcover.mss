@@ -330,6 +330,7 @@
     }
   }
 
+  [feature = 'landuse_animal_keeping'][zoom >= 10],
   [feature = 'landuse_farmyard'][zoom >= 10] {
     polygon-fill: @farmyard;
       [zoom >= 17] {
