@@ -692,6 +692,12 @@
     }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
+    [sport = 'equestrian'] {
+      polygon-fill: desaturate(darken(@sand, 15%), 20%);
+      [zoom >= 18] {
+        line-color: desaturate(darken(@sand, 35%), 30%);
+      }
+    }
   }
 
   [feature = 'leisure_outdoor_seating'][zoom >= 16] {

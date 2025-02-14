@@ -92,7 +92,7 @@ Layer:
       <<: *osm2pgsql
       table: |-
         (SELECT
-            way, name, religion, density, way_pixels, is_building,
+            way, name, religion, density, sport, way_pixels, is_building,
             COALESCE(aeroway, golf, amenity, wetland, power, landuse, leisure, man_made, "natural", shop, tourism, highway, railway) AS feature
           FROM (SELECT
               way, COALESCE(name, '') AS name,
@@ -122,6 +122,9 @@ Layer:
               CASE WHEN "natural" = 'shrubbery'
                 THEN tags->'shrubbery:density'
               END AS density,
+              CASE WHEN "leisure" = 'pitch'
+                THEN tags->'sport'
+              END AS sport,
               way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
               CASE WHEN building = 'no' OR building IS NULL THEN 'no' ELSE 'yes' END AS is_building,
               way_area
