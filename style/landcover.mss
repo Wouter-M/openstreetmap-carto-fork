@@ -333,13 +333,6 @@
   [feature = 'landuse_animal_keeping'][zoom >= 10],
   [feature = 'landuse_farmyard'][zoom >= 10] {
     polygon-fill: @farmyard;
-      [zoom >= 17] {
-        line-width: 0.5;
-        line-color: @farmyard-line;
-        [name != ''] {
-          line-width: 0.7;
-        }
-      }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
