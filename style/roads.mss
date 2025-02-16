@@ -2772,7 +2772,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   // draw these dashed pedestrian lines all the way at the end, so they are on top of the background where roads join
   [feature = 'highway_pedestrian'] {
     [zoom >= 15][int_surface = null] {
-      line/line-color: lighten(black, 30%);
+      line/line-color: @footway-fill;
       [int_access = 'no'] { line/line-color: @footway-fill-noaccess; }
       line/line-dasharray: 1,3,2,4;
       line/line-join: bevel;
@@ -2790,7 +2790,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
     [zoom >= 15][int_surface = 'unpaved'] {
-      line/line-color: lighten(black, 30%);
+      line/line-color: lighten(@footway-fill, 15%);
       [int_access = 'no'] { line/line-color: @footway-fill-noaccess; }
       line/line-dasharray: 1,4;
       line/line-join: bevel;
@@ -2807,7 +2807,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
     [zoom >= 15][int_surface = 'paved'] {
-      line/line-color: lighten(black, 30%);
+      line/line-color: @footway-fill;
       [int_access = 'no'] { line/line-color: @footway-fill-noaccess; }
       line/line-dasharray: 2,3.5;
       line/line-width: @footway-width-z15;
