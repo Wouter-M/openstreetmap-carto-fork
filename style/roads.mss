@@ -593,6 +593,22 @@
       }
     }
 
+    [feature = 'highway_pedestrian'] {
+      [zoom >= 14] {
+        #roads-casing {
+          line-join: round;
+          line-cap: round;
+        }
+        #tunnels {
+          line-dasharray: 4,2;
+        }
+        #bridges {
+          line-color: @bridge-casing;
+          line-join: round;
+        }
+      }
+    }
+
     [feature = 'highway_living_street'] {
       [zoom >= 13] {
         line-color: @residential-casing;
