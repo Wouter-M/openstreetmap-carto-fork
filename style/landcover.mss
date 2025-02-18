@@ -239,11 +239,6 @@
   [feature = 'landuse_religious'][zoom >= 13] {
     polygon-fill: @place_of_worship;
     polygon-clip: false;
-    [zoom >= 15] {
-      line-color: @place_of_worship_outline;
-      line-width: 0.3;
-      line-clip: false;
-    }
   }
 
   [feature = 'amenity_prison'][zoom >= 10][way_pixels > 75] {
