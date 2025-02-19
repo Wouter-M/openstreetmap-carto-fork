@@ -217,7 +217,7 @@
     [zoom >= 10] {
       polygon-fill: @cemetery;
     }
-    [zoom >= 18] {
+    [zoom >= 17] {
       polygon-pattern-file: url('patterns/grave_yard_generic.svg');
       polygon-pattern-opacity: 0.6;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
