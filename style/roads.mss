@@ -511,7 +511,8 @@
     }
 
     [feature = 'highway_residential'],
-    [feature = 'highway_unclassified'] {
+    [feature = 'highway_unclassified'],
+    [zoom <= 16][feature = 'highway_busway'] {
       [zoom >= 13] {
         line-color: @residential-casing;
         line-width: @residential-width-z13;
@@ -560,11 +561,12 @@
     }
 
     [feature = 'highway_service'],
-    [feature = 'highway_busway'] {
+    [zoom >= 17][feature = 'highway_busway'] {
       [zoom >= 14][service = 'INT-normal'],
       [zoom >= 16][service = 'INT-minor'] {
         line-color: @service-casing;
-        [service = 'INT-normal'] {
+        [service = 'INT-normal'],
+        [feature = 'highway_busway'] {
           line-width: @service-width-z14;
           [zoom >= 16] { line-width: @service-width-z16; }
           [zoom >= 17] { line-width: @service-width-z17; }
@@ -1846,7 +1848,8 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     }
 
     [feature = 'highway_residential'],
-    [feature = 'highway_unclassified'] {
+    [feature = 'highway_unclassified'],
+    [zoom <= 16][feature = 'highway_busway'] {
       [zoom = 12][feature = 'highway_residential'] {
         line-color: @unimportant-road;
         line-width: @residential-width-z12;
@@ -2026,9 +2029,9 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     #roads-fill[feature = 'highway_service'],
     #bridges[feature = 'highway_service'],
     #tunnels[feature = 'highway_service'],
-    #roads-fill[feature = 'highway_busway'],
-    #bridges[feature = 'highway_busway'],
-    #tunnels[feature = 'highway_busway'] {
+    #roads-fill[zoom >= 17][feature = 'highway_busway'],
+    #bridges[zoom >= 17][feature = 'highway_busway'],
+    #tunnels[zoom >= 17][feature = 'highway_busway'] {
       [zoom >= 14][service = 'INT-normal'],
       [zoom >= 16][service = 'INT-minor'] {
         line-color: @service-fill;
@@ -3555,6 +3558,9 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         access/line-color: @transportation-icon;
         access/line-width: 1;
         access/line-dasharray: 1,2;
+        [zoom >= 16] {
+          access/line-dasharray: 4,3;
+        }
         [zoom >= 17] {
           access/line-join: round;
           access/line-cap: round;
