@@ -801,6 +801,17 @@
       }
     }
 
+    [feature = 'railway_subway'],
+    [feature = 'railway_construction'][construction = 'subway'] {
+      #bridges {
+        [zoom >= 14] {
+          line-width: 5.5;
+          line-color: @bridge-casing;
+          line-join: round;
+        }
+      }
+    }
+
     [feature = 'railway_light_rail'],
     [feature = 'railway_funicular'],
     [feature = 'railway_narrow_gauge'] {
@@ -1024,7 +1035,7 @@
     }
 
     [feature = 'railway_disused'][zoom >= 15],
-    [feature = 'railway_construction'],
+    [feature = 'railway_construction'][construction != 'subway'],
     [feature = 'railway_miniature'][zoom >= 15] {
       #bridges {
         [zoom >= 13] {
@@ -1044,6 +1055,17 @@
             line-width: 4;
           }
           line-color: white;
+        }
+      }
+    }
+
+    [feature = 'railway_subway'],
+    [feature = 'railway_construction'][construction = 'subway'] {
+      #bridges {
+        [zoom >= 14] {
+          line-width: 4;
+          line-color: white;
+          line-join: round;
         }
       }
     }
@@ -2686,6 +2708,32 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
 
+    [feature = 'railway_subway'] {
+      [zoom >= 12] {
+        line-width: 2;
+        line-color: #999;
+        [preserved = 'yes'][zoom >= 15] {
+          #roads-fill, #bridges {
+            dark/line-width: 3;
+            dark/line-color: #999;
+            light/line-width: 1;
+            light/line-color: white;
+            light/line-dasharray: 0,1,8,1;
+            light/line-join: round;
+          }
+        }
+        #tunnels {
+          line-width: 0;
+        }
+      }
+      #bridges {
+        [zoom >= 14] {
+          line-width: 2;
+          line-color: #999;
+        }
+      }
+    }
+
     [feature = 'railway_monorail'] {
       [zoom >= 14] {
         background/line-width: 4;
@@ -4270,6 +4318,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 #railways-text-name {
   /* Mostly started from z17. */
   [railway = 'rail'],
+  [railway = 'subway'],
   [railway = 'narrow_gauge'],
   [railway = 'light_rail'],
   [railway = 'funicular'],
