@@ -57,18 +57,21 @@
       text-line-spacing: -1.65; // -0.15 em
       text-dy: 10;
     }
-    [zoom >= 17][usage = 'tourism'] {
-      marker-width: 7;
-      text-name: "[name]";
-      text-face-name: @bold-fonts;
-      text-size: 10;
-      text-fill: @minor-station-text;
-      text-dy: 9;
-      text-halo-radius: @standard-halo-radius * 1.5;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: 30; // 3 em
-      text-line-spacing: -1.5; // -0.15 em
+    [zoom >= 16][usage = 'tourism'] {
+      marker-width: 5;
+      [zoom >= 17] {
+        text-name: "[name]";
+        text-face-name: @bold-fonts;
+        text-size: 10;
+        text-fill: @minor-station-text;
+        text-dy: 9;
+        text-halo-radius: @standard-halo-radius * 1.5;
+        text-halo-fill: @standard-halo-fill;
+        text-wrap-width: 30; // 3 em
+        text-line-spacing: -1.5; // -0.15 em
+      }
     }
+
   }
 
   [railway = 'halt'] {
