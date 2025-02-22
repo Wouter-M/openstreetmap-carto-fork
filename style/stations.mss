@@ -57,7 +57,7 @@
       text-line-spacing: -1.65; // -0.15 em
       text-dy: 10;
     }
-    [zoom >= 16][usage = 'tourism'] {
+    [zoom >= 15][usage = 'tourism'] {
       marker-width: 5;
       [zoom >= 17] {
         text-name: "[name]";
