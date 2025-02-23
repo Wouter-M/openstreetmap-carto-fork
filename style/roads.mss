@@ -701,6 +701,9 @@
           [zoom >= 19] { line-width: @footway-width-z19 + 2 * (@paths-background-width-z19 + @paths-bridge-casing-width); }
           line-color: lighten(@bridge-casing,40%);
           line-join: round;
+          [bridge = 'boardwalk'] {
+            line-color: lighten(@bridge-casing,65%);
+          }
         }
       }
       #tunnels {
@@ -901,6 +904,12 @@
           [zoom >= 19] { line-width: @footway-width-z19 + 2 * @paths-background-width-z19; }
           line-color: @footway-casing;
           line-join: round;
+          [bridge = 'boardwalk'] {
+            [zoom >= 15] {
+              line-width: @footway-width-z14 + 4 * @paths-background-width;
+            }
+            line-color: @pier;
+          }
         }
       }
       #tunnels {
