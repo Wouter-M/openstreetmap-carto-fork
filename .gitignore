@@ -16,3 +16,4 @@ localconfig.js
 *.pyc
 **/*.pyc
 /.idea/*
+/dc-local.yml

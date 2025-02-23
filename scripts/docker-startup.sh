@@ -48,7 +48,6 @@ EOF
   --number-processes $OSM2PGSQL_NUMPROC \
   --database gis \
   --slim \
-  --drop \
   --output flex \
   --style openstreetmap-carto-flex.lua \
   $OSM2PGSQL_DATAFILE
@@ -63,6 +62,37 @@ EOF
 
   # Download fonts
   scripts/get-fonts.py
+  ;;
+
+update)
+  # Creating default import settings file editable by user and passing values for osm2pgsql
+  if [ ! -e ".env" ]; then
+    cat > .env <<EOF
+# Environment settings for importing to a Docker container database
+PG_WORK_MEM=${PG_WORK_MEM:-16MB}
+PG_MAINTENANCE_WORK_MEM=${PG_MAINTENANCE_WORK_MEM:-256MB}
+OSM2PGSQL_CACHE=${OSM2PGSQL_CACHE:-512}
+OSM2PGSQL_NUMPROC=${OSM2PGSQL_NUMPROC:-1}
+OSM2PGSQL_DATAFILE=${OSM2PGSQL_DATAFILE:-data.osm.pbf}
+EXTERNAL_DATA_SCRIPT_FLAGS=${EXTERNAL_DATA_SCRIPT_FLAGS:-}
+EOF
+    chmod a+rw .env
+    export OSM2PGSQL_CACHE=${OSM2PGSQL_CACHE:-512}
+    export OSM2PGSQL_NUMPROC=${OSM2PGSQL_NUMPROC:-1}
+    export OSM2PGSQL_DATAFILE=${OSM2PGSQL_DATAFILE:-data.osm.pbf}
+  fi
+
+  # Importing data to a database
+  echo "Importing changes data from $OSM2PGSQL_DATAFILE"
+  osm2pgsql \
+  --cache $OSM2PGSQL_CACHE \
+  --number-processes $OSM2PGSQL_NUMPROC \
+  --database gis \
+  --append \
+  --slim \
+  --output flex \
+  --style openstreetmap-carto-flex.lua \
+  $OSM2PGSQL_DATAFILE
   ;;
 
 kosmtik)

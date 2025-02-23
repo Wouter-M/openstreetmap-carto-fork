@@ -22,10 +22,13 @@ services:
       dockerfile: Dockerfile.db
     ports:
       - 5432:5432
+    #volumes:  #todo: add location to your postgres data directory
+    #  - /media/wouter/gis:/var/lib/postgresql/data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
       - PG_WORK_MEM
       - PG_MAINTENANCE_WORK_MEM
+      - PGDATA=/var/lib/postgresql/data/pgdata
   import:
     image: import:v1
     build:
@@ -35,6 +38,23 @@ services:
       - .:/openstreetmap-carto
     depends_on:
       - db
+    environment:
+      - PGHOST=db
+      - PGUSER=postgres
+      - PG_WORK_MEM
+      - PG_MAINTENANCE_WORK_MEM
+      - OSM2PGSQL_CACHE
+      - OSM2PGSQL_NUMPROC
+      - OSM2PGSQL_DATAFILE
+      - EXTERNAL_DATA_SCRIPT_FLAGS
+  update:
+    image: import:v1
+    build:
+      context: .
+      dockerfile: Dockerfile.import
+    volumes:
+      - .:/openstreetmap-carto
+    command: "sh scripts/docker-startup.sh update"
     environment:
       - PGHOST=db
       - PGUSER=postgres
