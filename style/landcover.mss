@@ -775,15 +775,16 @@
         polygon-pattern-alignment: global;
       }
     }
-    [natural = 'scrub'] {
+    [natural = 'scrub'][zoom >= 17] {
       polygon-pattern-file: url('symbols/scrub.png');
       polygon-pattern-alignment: global;
     }
     [natural = 'shrubbery'] {
       polygon-fill: @shrubbery;
-      polygon-pattern-file: url('symbols/scrub.png');
-      polygon-pattern-alignment: global;
-      [zoom >= 16] {
+
+      [zoom >= 17] {
+        polygon-pattern-file: url('symbols/scrub.png');
+        polygon-pattern-alignment: global;
         line-width: 0.5;
         line-color: @shrubbery-line;
       }
