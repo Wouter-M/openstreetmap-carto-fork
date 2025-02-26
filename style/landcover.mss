@@ -110,7 +110,7 @@
   [feature = 'tourism_picnic_site'] {
     [zoom >= 10] {
       polygon-fill: @campsite;
-      [zoom >= 13] {
+      [zoom >= 17] {
         line-color: saturate(darken(@campsite, 60%), 30%);
         line-width: 0.3;
       }
