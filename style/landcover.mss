@@ -856,6 +856,7 @@
   }
   [man_made = 'embankment'][zoom >= 15]::man_made {
     line-pattern-file: url('symbols/embankment.svg');
+    line-pattern-opacity: 0.5;
   }
 }
 
