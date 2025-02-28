@@ -310,7 +310,7 @@
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
-    [zoom >= 16][name != ''] {
+    [zoom >= 17][name != ''] {
       line-color: desaturate(darken(@allotments, 10%), 10%);
       line-width: 0.7;
     }
