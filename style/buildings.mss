@@ -19,8 +19,16 @@
       line-color: @building-fill;
       line-width: 1;
       line-clip: false;
+      [building = 'construction'] {
+        line-width: 0;
+        polygon-opacity: 0.5;
+      }
       [zoom >= 18] {
         line-color: @building-line;
+        [building = 'construction'] {
+          line-width: 1;
+          line-dasharray: 0,1,8,1;
+        }
       }
     }
     [amenity = 'place_of_worship'],
