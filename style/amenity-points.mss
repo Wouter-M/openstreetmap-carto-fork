@@ -800,10 +800,11 @@
   [feature = 'historic_memorial'][memorial = 'bust'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stele'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stone'][zoom >= 18],
+  [feature = 'historic_memorial'][memorial = 'cross'][zoom >= 18],
   [feature = 'historic_memorial'][memorial = 'stolperstein'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'blue_plaque'][zoom >= 19],
   [feature = 'historic_memorial'][memorial = 'plaque'][zoom >= 19] {
-    marker-file: url('symbols/historic/memorial.svg');
+    marker-file: url('symbols/historic/monument.svg');
     [memorial = 'bust']{
       marker-file: url('symbols/historic/bust.svg');
     }
@@ -813,6 +814,10 @@
     }
     [memorial = 'statue'] {
       marker-file: url('symbols/historic/statue.svg');
+    }
+    [memorial = 'stele'],
+    [memorial = 'cross'] {
+      marker-file: url('symbols/historic/memorial.svg');
     }
     [memorial = 'stone'] {
       marker-file: url('symbols/historic/stone.svg');
