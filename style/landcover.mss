@@ -22,6 +22,7 @@
 @retail-line: #d99c95;      // Lch(70,25,30)
 @commercial: #f2dad9;       // Lch(89,8.5,25)
 @commercial-line: #d1b2b0;  // Lch(75,12,25)
+@institutional: #DEE6F2;
 @industrial: #ebdbe8;       // Lch(89,9,330) (Also used for railway, wastewater_plant)
 @industrial-line: #c6b3c3;  // Lch(75,11,330) (Also used for railway-line, wastewater_plant-line)
 @farmland: #eef0d5;         // Lch(94,14,112)
@@ -443,6 +444,17 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
+
+  [feature = 'landuse_civic_admin'][zoom >= 8],
+  [feature = 'landuse_government'][zoom >= 8],
+  [feature = 'landuse_governmental'][zoom >= 8],
+  [feature = 'landuse_institutional'][zoom >= 8] {
+      polygon-fill: @built-up-lowzoom;
+      [zoom >= 12] { polygon-fill: @built-up-z12; }
+      [zoom >= 13] { polygon-fill: @institutional; }
+      [way_pixels >= 4]  { polygon-gamma: 0.75; }
+      [way_pixels >= 64] { polygon-gamma: 0.3;  }
+    }
 
   [feature = 'landuse_brownfield'],
   [feature = 'landuse_construction'] {
