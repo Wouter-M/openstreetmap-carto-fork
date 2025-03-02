@@ -83,6 +83,9 @@
       [zoom >= 15] {
         marker-width: 6;
       }
+      [usage = 'tourism'] {
+        marker-fill: @minor-station-color;
+      }
     }
     [zoom >= 15] {
       text-name: "[name]";
@@ -94,6 +97,9 @@
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
+      [usage = 'tourism'] {
+        text-fill: @minor-station-text;
+      }
     }
   }
 
