@@ -23,11 +23,15 @@
         line-width: 0;
         polygon-opacity: 0.5;
       }
-      [zoom >= 18] {
-        line-color: @building-line;
-        [building = 'construction'] {
-          line-width: 1;
-          line-dasharray: 0,1,8,1;
+      [zoom >= 17] {
+        line-color: darken(@building-fill,5%);
+        line-width: .75;
+        [zoom >= 18] {
+          line-color: @building-line;
+          [building = 'construction'] {
+           line-width: 1;
+           line-dasharray: 0,1,8,1;
+          }
         }
       }
     }
